@@ -1,0 +1,442 @@
+@charset "UTF-8";
+
+* {
+  padding: 0px;
+  margin: 0px;
+  border: 0px;
+}
+
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  min-width: 320px;
+}
+
+body {
+  color: #000;
+  line-height: 1;
+  font-family: "";
+  font-size: 0.875rem;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+input,
+button,
+textarea {
+  font-family: "";
+  font-size: inherit;
+  line-height: inherit;
+}
+
+button {
+  cursor: pointer;
+  color: inherit;
+  background-color: transparent;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul li {
+  list-style: none;
+}
+
+img {
+  vertical-align: top;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: inherit;
+  font-size: inherit;
+}
+
+.lock body {
+  overflow: hidden;
+  -ms-touch-action: none;
+      touch-action: none;
+  -ms-scroll-chaining: none;
+      overscroll-behavior: none;
+}
+
+.wrapper {
+  min-height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  overflow: hidden;
+}
+
+@supports (overflow: clip) {
+  .wrapper {
+    overflow: clip;
+  }
+}
+
+.wrapper > main {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+}
+
+.wrapper > * {
+  min-width: 0;
+}
+
+/*
+(i) Стилі будуть застосовуватись до
+всіх класів, що містять *__container
+Наприклад header__container, main__container і т.п.
+Сніппет (HTML): cnt
+*/
+
+[class*=__container] {
+  max-width: 75rem;
+  margin: 0 auto;
+  padding: 0 0.9375rem;
+}
+
+[class*=-ibg] {
+  position: relative;
+}
+
+[class*=-ibg] img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+[class*=-ibg_contain] img {
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+.header {
+  padding: 0.8125rem 0;
+  border-bottom: 1px solid #000;
+}
+
+.header__body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.header__menu {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.header__sort {
+  margin: 0rem 1.625rem 0rem 0rem;
+  cursor: pointer;
+}
+
+.header__settings {
+  cursor: pointer;
+}
+
+/*.settings-popup {
+
+	// .settings-popup__content
+
+	&__content {
+		background-color: #fff;
+		border: 1px solid #000;
+	}
+
+	// .settings-popup__title
+
+	&__title {
+		color: #000;
+	}
+
+	// .settings-popup__item
+
+	&__item {
+	}
+
+	// .settings-popup__switch
+
+	&__switch {
+	}
+
+	// .settings-popup__switch-input
+
+	&__switch-input {
+	}
+
+	// .settings-popup__switch-slider
+
+	&__switch-slider {
+	}
+
+	// .settings-popup__description
+
+	&__description {
+	}
+}
+.settings-pupup {
+
+	// .settings-pupup__menu
+
+	&__menu {
+	}
+}*/
+
+/*
+.icon-menu {
+	display: none;
+	@media (max-width: $mobile) {
+		display: block;
+		position: relative;
+		width: rem(30);
+		height: rem(18);
+		z-index: 5;
+		@media (any-hover: none) {
+			cursor: default;
+		}
+		span,
+		&::before,
+		&::after {
+			content: "";
+			transition: all 0.3s ease 0s;
+			right: 0;
+			position: absolute;
+			width: 100%;
+			height: rem(2);
+			background-color: #000;
+		}
+		&::before {
+			top: 0;
+		}
+		&::after {
+			bottom: 0;
+		}
+		span {
+			top: calc(50% - rem(1));
+		}
+		.menu-open & {
+			span {
+				width: 0;
+			}
+			&::before,
+			&::after {
+			}
+			&::before {
+				top: calc(50% - rem(1));
+				transform: rotate(-45deg);
+			}
+			&::after {
+				bottom: calc(50% - rem(1));
+				transform: rotate(45deg);
+			}
+		}
+	}
+}
+*/
+
+:root {
+  --bg-color-light: #ffffff;
+  /* Цвет фона светлой темы */
+  --text-color-light: #333333;
+  /* Цвет текста светлой темы */
+  --bg-color-dark: #333333;
+  /* Цвет фона темной темы */
+  --text-color-dark: #ffffff;
+  /* Цвет текста темной темы */
+}
+
+.todolist {
+  margin: 4.625rem 0rem 0rem 0rem;
+}
+
+.addmenu-todolist__control {
+  padding: 1rem 0rem 0rem 0rem;
+  margin: 0rem 0rem 2.75rem 0rem;
+  border: 1px solid #000;
+  width: 33.1875rem;
+  border-radius: 20px;
+  position: relative;
+}
+
+.addmenu-todolist__title {
+  margin: 0rem 0rem 2.0625rem 0.9375rem;
+  font-size: 1.25rem;
+  color: #5C5A5A;
+}
+
+.addmenu-todolist__input {
+  margin: 0rem 0rem 1.5rem 0.9375rem;
+  outline: none;
+  color: #868686;
+  font-size: 1.125rem;
+}
+
+.addmenu-todolist__buttons {
+  border-top: 1px solid #000;
+  padding: 0.9375rem 1.125rem 0.9375rem 0rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: end;
+}
+
+.addmenu-todolist__cansel {
+  margin: 0rem 0.875rem 0rem 0rem;
+  background-color: #FCFCFC;
+  border: 1px solid #000;
+  padding: 0.375rem 1.4375rem;
+  border-radius: 10px;
+  -webkit-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+}
+
+.addmenu-todolist__cansel:hover {
+  background-color: #eee;
+}
+
+.addmenu-todolist__save {
+  background-color: #FCFCFC;
+  border: 1px solid #000;
+  padding: 0.375rem 1.4375rem;
+  border-radius: 10px;
+  -webkit-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+}
+
+.addmenu-todolist__save:hover {
+  background-color: #eee;
+}
+
+.todolist__item {
+  border: 1px solid #000;
+  border-radius: 10px;
+  padding: 0.75rem 0.6875rem 0.6875rem 0.5rem;
+  width: 33.3125rem;
+  margin: 0rem 0rem 4.6875rem 0rem;
+}
+
+.todolist__item:not(:last-child) {
+  margin: 0rem 0rem 2.1875rem 0rem;
+}
+
+.todolist__header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.todolist__title {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 100%;
+          flex: 1 1 100%;
+  margin: 0rem 0rem 1.125rem 0rem;
+  color: #5C5A5A;
+}
+
+.todolist__editing {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.todolist__date {
+  color: #5E5E5E;
+  margin: 0rem 0.5rem 0rem 0rem;
+}
+
+.todolist__edit {
+  cursor: pointer;
+  margin: 0rem 0.5rem 0rem 0rem;
+}
+
+.todolist__close {
+  cursor: pointer;
+}
+
+.todolist__text {
+  color: #868686;
+}
+
+.todolist__arrows {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: end;
+}
+
+.todolist__arrow {
+  cursor: pointer;
+}
+
+.todolist__arrow:first-child {
+  -webkit-transform: rotate(-90deg);
+      -ms-transform: rotate(-90deg);
+          transform: rotate(-90deg);
+}
+
+.todolist__arrow:last-child {
+  -webkit-transform: rotate(90deg);
+      -ms-transform: rotate(90deg);
+          transform: rotate(90deg);
+}
+
+/*.light-theme {
+    background-color: var(--bg-color-light);
+    color: var(--text-color-light);
+}
+
+
+.dark-theme {
+    background-color: var(--bg-color-dark);
+    color: var(--text-color-dark);
+    svg {
+        path {
+            fill: #ffffff;
+        }
+    }
+}
+*/
